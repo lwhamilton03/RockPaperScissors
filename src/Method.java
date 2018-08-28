@@ -7,6 +7,39 @@ public class Method {
 	Scanner scan = new Scanner(System.in); //SCANNER NEEDS FIXING 
 	Random rand = new Random(); 
 	
+	public String percentage(int a, int b)
+	{
+		int c = a / b * 100;
+		return c + " %"; 
+	}
+	
+	public String most(int a, int b, int c)
+	{
+		int [] list = {a, b, c}; 
+		int value = a;
+		for(int i = 0; i <= 2; i++)
+		{
+			if (list[i] > value)
+			{
+				value = list[i]; 
+			}
+		}
+		if (value == a)
+		{
+			return "The Most is Rock";
+		}
+		if (value == b)
+		{
+			return "The Most is Scissors";
+		}
+		if (value == c)
+		{
+			return "The Most is Paper";
+		}
+		
+		return "potentially a tie... need to sort it out"; // sort it out!!!!  
+	}
+	
 	public void game(int num) 
 	{
 		
@@ -18,12 +51,10 @@ public class Method {
 		int scissors = 0; 
 		int paper = 0;
 		
-		
 		System.out.println("Are you ready to play?");
 		
 		for(int i = 0; i < num; i++)
-		{
-			
+		{			
 			System.out.println("Go again... 3...2...1...");
 			Integer computer = rand.nextInt(3) + 1;
 			
@@ -37,13 +68,6 @@ public class Method {
 			if (play.equals("quit")) 
 			{
 				System.out.println("You have  quit the game");
-				System.out.println("Total Number of games = " + total);
-				System.out.println("Total Number of Human Wins = " + winHuman);     //Add percentages
-				System.out.println("Total Number of Computer Wins = " + winComputer);
-				System.out.println("Total Number of Ties = " + ties);
-				System.out.println("Total Number of Rocks = " + rock);
-				System.out.println("Total Number of Scissors = " + scissors);
-				System.out.println("Total Number of Paper = " + paper);
 				
 				break;
 			}
@@ -127,14 +151,15 @@ public class Method {
 			
 		}
 		
-		System.out.println(num + " games played! Here are the results!");
+		System.out.println("Here are the results!");
 		System.out.println("Total Number of games = " + total);
-		System.out.println("Total Number of Human Wins = " + winHuman);     //Add percentages
-		System.out.println("Total Number of Computer Wins = " + winComputer);
-		System.out.println("Total Number of Ties = " + ties);
+		System.out.println("Total Number of Human Wins = " + winHuman + ", Percentage Human Wins: " + percentage(winHuman, total));     //Add percentages
+		System.out.println("Total Number of Computer Wins = " + winComputer + ", Percentage Computer Wins: " + percentage(winComputer, total));
+		System.out.println("Total Number of Ties = " + ties + ", Percentage of Ties: " + percentage(ties, total));
 		System.out.println("Total Number of Rocks = " + rock);
 		System.out.println("Total Number of Scissors = " + scissors);
 		System.out.println("Total Number of Paper = " + paper);
+		System.out.println(most(rock, scissors, paper));
 		
 	
 	}

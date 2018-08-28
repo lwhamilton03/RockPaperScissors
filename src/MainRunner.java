@@ -2,10 +2,9 @@
 public class MainRunner {
 
 	public static void main(String[] args) {
-		
+
 			Method rps = new Method();
-			
-			rps.game(5);
+			rps.game(2);
 	}
 
 }
