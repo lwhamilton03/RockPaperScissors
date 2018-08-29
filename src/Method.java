@@ -1,15 +1,16 @@
+// Need to sort out the percentage!  
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Method {
  	
-	Scanner scan = new Scanner(System.in); //SCANNER NEEDS FIXING 
+	Scanner scan = new Scanner(System.in);  
 	Random rand = new Random(); 
 	
 	public String percentage(int a, int b)
 	{
-		int c = a / b * 100;
+		double c = (a * 100) / b;
 		return c + " %"; 
 	}
 	
